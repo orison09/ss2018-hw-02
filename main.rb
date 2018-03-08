@@ -4,8 +4,8 @@ class ShortStringPacker
   #   str - String object
   # Returns: a Fixnum object
 	
-def self.pack(str)
-  array = []
+  def self.pack(str)
+    array = []
 	key = {"a"=> 1, "b"=> 2,"c"=>3,"d"=>4,"e"=>5,"f"=>6,"g"=>7,"h"=>8,"i"=>9,"j"=>10,"k"=>11,"l"=>12,"m"=>13,"n"=>14,"o"=>15,"p"=>16,"q"=>17,"r"=>18,"s"=>19,"t"=>20,"u"=>21,"v"=>22,"w"=>23,"x"=>24,"y"=>25,"z"=>26}
   
 	str.each_char do |n|
@@ -24,20 +24,19 @@ def self.pack(str)
 	 packed = array.join()
    ##puts packed
 	 return packed.to_i(10)
-end
+  end
 
+	
+  ## Unpacks a Fixnum from pack() method into a short string
+  # Arguments:
+  #   packed - a Fixnum object
+  # Returns: a String object
 
-def self.unpack(int)
+  def self.unpack(int)
     str = int.to_s
     puts str
     puts str.class
    
-    
+    end
+
 end
-
-
-
-test =  self.pack("orison")
-##puts test 
-
-self.unpack(test)
