@@ -34,9 +34,16 @@ class ShortStringPacker
 
   def self.unpack(int)
     str = int.to_s
-    puts str
-    puts str.class
-   
-    end
+    ## Need to convert this String to Array of 5 bits
+    
+    array = ["00101","00011","00001"]
+    puts array 
+    array.map! {|de| de.to_i(2)}
+
+    otherkey = {"1"=>"a","2"=>"b","3"=>"c","4"=>"d","5"=>"e","6"=>"f","7"=>"g","8"=>"h","9"=>"i","10"=>"j","11"=>"k","12"=>"l","13"=>"m","14"=>"n","15"=>"o","16"=>"p","17"=>"q","18"=>"r","19"=>"s","20"=>"t","21"=>"u","22"=>"v","23"=>"w","24"=>"x","25"=>"y","26"=>"z"}
+  
+    pass=array.map! {|n| otherkey["#{n}"]}
+    return pass.join
+  end
 
 end
